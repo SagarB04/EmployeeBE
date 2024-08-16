@@ -2,6 +2,8 @@ package com.employeemanagement.entity;
 
 import java.time.LocalDate;
 
+import org.springframework.stereotype.Component;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,13 +11,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+@Component
 @Entity
-@Table(name = "employees")
+@Table(name = "empmodel")
 public class EmpModel {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "EMPLOYEE_ID", nullable = false)
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "EMPLOYEE_ID")
 	private Integer id;
 
 	@Column(name = "FIRST_NAME", nullable = false)
