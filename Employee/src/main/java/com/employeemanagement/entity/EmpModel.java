@@ -13,39 +13,34 @@ import jakarta.persistence.Table;
 
 @Component
 @Entity
-@Table(name = "empmodel")
+@Table(name = "employee")
 public class EmpModel {
 
 	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "EMPLOYEE_ID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	@Column(name = "FIRST_NAME", nullable = false)
+	@Column(nullable = false) 
 	private String fname;
 
-	@Column(name = "LAST_NAME", nullable = false)
+	@Column(nullable = false) 
 	private String lname;
 
-	@Column(name = "EMAIL", nullable = false)
+	@Column(nullable = false) 
 	private String email;
 
-	@Column(name = "PHONE_NUMBER")
+	@Column(nullable = false) 
 	private String phone;
 
-	@Column(name = "HIRE_DATE", nullable = false)
 	private LocalDate hireDate;
 
-	@Column(name = "JOB_ID", nullable = false)
 	private String jobId;
 
-	@Column(name = "SALARY")
+	@Column(nullable = false) 
 	private Double salary;
 
-	@Column(name = "MANAGER_ID")
 	private Integer managerId;
 
-	@Column(name = "DEPARTMENT_ID")
 	private Integer deptId;
 
 	public EmpModel() {

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:5173")
 public class EmployeeController {
 
 	@Autowired
@@ -33,7 +34,7 @@ public class EmployeeController {
 		return service.getEmployeebyId(id);
 	}
 
-	@GetMapping("/employee/delete")
+	@DeleteMapping("/employee/delete")
 	public String deleteEmployeebyId(@RequestParam int id) {
 		return service.deleteEmployeebyId(id);
 	}
@@ -41,11 +42,6 @@ public class EmployeeController {
 	@PostMapping("/employee/save")
 	public EmpModel saveEmployee(@RequestBody EmpModel emp) {
 		return service.saveEmployee(emp);
-	}
-	
-	@PostMapping("/employee/update")
-	public EmpModel updateEmployee(@RequestBody EmpModel emp) {
-		return service.updateEmployee(emp);
 	}
 
 }

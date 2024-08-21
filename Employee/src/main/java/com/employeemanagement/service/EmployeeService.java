@@ -47,17 +47,11 @@ public class EmployeeService {
 	}
 
 	/*
-	 * save employee
+	 * save & update employee
 	 */
 	public EmpModel saveEmployee(EmpModel emp) {
 		return repo.save(emp);
 	}
 
-	/*
-	 * update employee
-	 */
-	public EmpModel updateEmployee(EmpModel emp) {
-		return repo.save(emp);
-	}
 	
 }
